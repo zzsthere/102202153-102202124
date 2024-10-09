@@ -1,0 +1,19 @@
+<view class="container">  
+  <view class="card" wx:for="{{[1, 2]}}" wx:key="index" wx:if="{{index === 0 ? showLogin : showRegister}}">  
+    <view class="card-header">  
+      <text class="card-title">{{index === 0 ? '登录' : '注册'}}</text>  
+    </view>  
+    <view class="card-body">  
+      <input type="text" placeholder="手机号码" bindinput="handlePhoneInput" value="{{phone}}" />  
+      <view class="phone-error" wx:if="{{phoneError}}">{{phoneErrorText}}</view>  
+      <input type="password" placeholder="密码" bindinput="handlePasswordInput" value="{{password}}" />  
+      <view class="password-error" wx:if="{{passwordError}}">密码长度至少为6位</view>  
+      <view class="code-container">  
+        <input type="text" placeholder="验证码" bindinput="handleCodeInput" value="{{code}}" />  
+        <button bindtap="getCode" class="code-button">{{codeButtonText}}</button>  
+      </view>  
+      <button bindtap="{{index === 0 ? 'login' : 'register'}}" class="submit-button">{{index === 0 ? '登录' : '注册'}}</button>  
+    </view>  
+  </view>  
+  <button bindtap="toggleForm" class="toggle-button">切换至{{showLogin ? '注册' : '登录'}}</button>  
+</view>

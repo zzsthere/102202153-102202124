@@ -1,0 +1,12 @@
+/* 首页样式 */  
+.container {  
+  padding: 20px;  
+}  
+  
+navigator {  
+  display: block;  
+  margin-bottom: 15px;  
+  text-align: center;  
+  color: #4285F4;  
+  text-decoration: none;  
+}

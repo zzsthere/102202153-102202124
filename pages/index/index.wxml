@@ -1,0 +1,8 @@
+<view class="container">  
+  <navigator url="/pages/login/login">登录</navigator>  
+  <navigator url="/pages/register/register">注册</navigator>  
+  <navigator url="/pages/userInfo/userInfo">用户信息</navigator>  
+  <navigator url="/pages/projectDetail/projectDetail">项目详情</navigator>  
+  <navigator url="/pages/chat/chat">聊天</navigator>  
+  <navigator url="/pages/notification/notification">通知</navigator>  
+</view>

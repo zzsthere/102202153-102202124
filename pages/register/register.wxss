@@ -1,0 +1,75 @@
+.container {  
+  padding: 20px;  
+}  
+  
+.card {  
+  background-color: #f5f5f5;  
+  border: 1px solid #cce5ff;  
+  border-radius: 10px;  
+  margin-bottom: 20px;  
+  padding: 20px;  
+}  
+  
+.card-header {  
+  margin-bottom: 15px;  
+}  
+  
+.card-title {  
+  font-size: 18px;  
+  color: #0000ff;  
+}  
+  
+.card-body {  
+  display: flex;  
+  flex-direction: column;  
+}  
+  
+input {  
+  margin-bottom: 10px;  
+  padding: 10px;  
+  border: 1px solid #ddd;  
+  border-radius: 5px;  
+}  
+  
+.phone-error, .password-error {  
+  color: red;  
+  font-size: 12px;  
+  margin-top: 5px;  
+}  
+  
+.code-container {  
+  display: flex;  
+  justify-content: space-between;  
+  align-items: center;  
+  margin-bottom: 15px;  
+}  
+  
+.code-button {  
+  width: 100px;  
+  background-color: #0000ff;  
+  color: #ffffff;  
+  border: none;  
+  border-radius: 5px;  
+  padding: 10px;  
+  margin-left: 10px;  
+}  
+  
+.submit-button {  
+  background-color: #007aff;  
+  color: #ffffff;  
+  border: none;  
+  border-radius: 5px;  
+  padding: 10px;  
+  text-align: center;  
+  width: 100%;  
+}  
+  
+.toggle-button {  
+  margin-top: 20px;  
+  background-color: #007aff;  
+  color: #ffffff;  
+  border: none;  
+  border-radius: 5px;  
+  padding: 10px;  
+  text-align: center;  
+}

@@ -1,0 +1,19 @@
+{  
+  "pages": [  
+    "pages/index/index",  
+    "pages/logs/logs",  
+    "pages/login/login",  
+    "pages/register/register",  
+    "pages/userInfo/userInfo",  
+    "pages/projectDetail/projectDetail",  
+    "pages/chat/chat",  
+    "pages/notification/notification"  
+  ],  
+  "window": {  
+    "navigationBarBackgroundColor": "#4285F4",  
+    "navigationBarTextStyle": "white",  
+    "navigationBarTitleText": "AL聚能阁",  
+    "backgroundColor": "#F5F5F5",  
+    "backgroundTextStyle": "light"  
+  }  
+}

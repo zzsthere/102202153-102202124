@@ -1,0 +1,36 @@
+<!-- userInfo.wxml -->
+<view class="container">
+  <view class="avatar" bindtap="chooseAvatar">
+    <image src="{{avatarUrl}}" mode="aspectFill" class="avatar-img"></image>
+    <view class="progress" wx:if="{{uploadProgress > 0}}">
+      <progress value="{{uploadProgress}}" color="#007aff" backgroundColor="#fff"></progress>
+    </view>
+  </view>
+
+  <radio-group bindchange="selectIdentity" class="identity-group">
+    <block wx:for="{{identities}}" wx:key="item">
+      <label class="identity-label">
+        <radio value="{{item}}" checked="{{item === identity}}"></radio>
+        <text>{{item}}</text>
+        <text class="checkmark" wx:if="{{item === identity}}">✔️</text>
+      </label>
+    </block>
+  </radio-group>
+
+  <input placeholder="昵称" bindinput="onNicknameInput" class="nickname-input"/>
+  <input placeholder="简介" bindinput="onBioInput" class="bio-input"/>
+
+  <button bindtap="saveUserInfo" class="save-button">保存用户信息</button>
+
+  <modal wx:if="{{showModal}}" class="modal">
+    <view class="modal-content">
+      <text>您确定要保存修改后的信息吗？</text>
+      <button bindtap="confirmSave" class="confirm-btn">确定</button>
+      <button bindtap="cancelSave" class="cancel-btn">取消</button>
+    </view>
+  </modal>
+
+  <view class="status {{saveStatus ? (saveStatus.indexOf('成功') !== -1 ? 'success' : 'error') : ''}}">
+    {{saveStatus}}
+  </view>
+</view>
