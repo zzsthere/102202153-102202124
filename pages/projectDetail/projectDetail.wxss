@@ -1,1 +1,53 @@
-/* pages/projectDetail/projectDetail.wxss */
+.container {
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.project-info {
+  background-color: #a0cefa;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(10, 10, 10);
+}
+
+.project-description {
+  font-size: 16px;
+  color: #666;
+  margin-top: 10px;
+}
+
+.project-details {
+  margin-top: 10px;
+}
+
+.project-participants,
+.project-views,
+.project-deadline,
+.project-status {
+  font-size: 14px;
+  color: rgb(63, 62, 62);
+  display: block;
+}
+
+/* 新增样式，让项目标题和内容换行显示 */
+.project-title +.project-description {
+  margin-top: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #667a8d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}

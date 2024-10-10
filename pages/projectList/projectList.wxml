@@ -1,0 +1,51 @@
+<view class="container">
+  <!-- 项目名称输入 -->
+  <view class="form-item">
+    <view class="form-label" style="height: 48rpx; display: block; box-sizing: border-box">项目名称 <text class="info-icon" bindtap="showInfo">?</text></view>
+    <input type="text" placeholder="请输入项目名称" bindinput="onNameInput" />
+    <text wx:if="{{nameError}}" class="error">{{nameError}}</text>
+  </view>
+
+  <!-- 项目描述输入 -->
+  <view class="form-item">
+    <view class="form-label" style="height: 49rpx; display: block; box-sizing: border-box">项目描述</view>
+    <textarea placeholder="请输入项目描述" bindinput="onDescriptionInput" style="width: 681rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx"></textarea>
+    <text class="count">已输入字数：{{descriptionLength}}/200</text>
+  </view>
+
+  <!-- 项目需求输入 -->
+  <view class="form-item">
+    <view class="form-label" style="height: 53rpx; display: block; box-sizing: border-box">项目需求</view>
+    <textarea placeholder="请输入项目需求，每条以 '-' 开头" bindinput="onRequirementInput" style="width: 681rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx"></textarea>
+    <text wx:if="{{requirementError}}" class="error">{{requirementError}}</text>
+  </view>
+
+  <!-- 招募人数输入 -->
+  <view class="form-item">
+    <view class="form-label" style="height: 48rpx; display: block; box-sizing: border-box">招募人数</view>
+    <input type="number" placeholder="请输入正整数" bindinput="onRecruitCountInput" />
+    <text wx:if="{{recruitCountError}}" class="error">{{recruitCountError}}</text>
+  </view>
+
+  <!-- 截止日期选择 -->
+  <view class="form-item">
+    <view class="form-label" style="height: 60rpx; display: block; box-sizing: border-box">截止日期</view>
+    <picker mode="date" bindchange="onDateChange">
+      <view class="picker" style="height: 65rpx; display: flex; box-sizing: border-box">
+        {{date}}
+      </view>
+    </picker>
+  </view>
+
+  <!-- 发布项目按钮 -->
+  <button class="publish-btn" bindtap="showConfirmDialog">发布项目</button>
+
+  <!-- 确认对话框 -->
+  <view class="confirm-container" wx:if="{{showConfirm}}">
+    <view style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 10px rgba(0,0,0,0.2); width: 200px">
+      <view>确认发布项目吗？</view>
+      <button class="confirm-btn" bindtap="confirmPublish" style="margin-top: 10px;">确定发布</button>
+      <button class="cancel-btn" bindtap="cancelPublish" style="margin-top: 10px;">取消</button>
+    </view>
+  </view>
+</view>

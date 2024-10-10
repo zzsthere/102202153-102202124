@@ -1,36 +1,70 @@
-<!-- userInfo.wxml -->
 <view class="container">
-  <view class="avatar" bindtap="chooseAvatar">
-    <image src="{{avatarUrl}}" mode="aspectFill" class="avatar-img"></image>
-    <view class="progress" wx:if="{{uploadProgress > 0}}">
-      <progress value="{{uploadProgress}}" color="#007aff" backgroundColor="#fff"></progress>
+  <!-- 个人信息展示区域 -->
+  <view class="user-info-section">
+    <!-- 头像 -->
+    <view class="avatar" bindtap="chooseAvatar">
+      <image src="{{avatarUrl}}" mode="aspectFill" class="avatar-img" style="box-shadow: 50px"></image>
+      <view class="progress" wx:if="{{uploadProgress > 0}}">
+        <progress value="{{uploadProgress}}" color="#007aff" backgroundColor="#fff"></progress>
+      </view>
+    </view>
+    <!-- 昵称 -->
+    <view class="nickname-section">
+      <text class="nickname">{{nickname}}</text>
+      <text wx:if="{{savedNickname}}" class="saved-nickname" style="font-weight: bold;">{{savedNickname}}</text>
     </view>
   </view>
 
-  <radio-group bindchange="selectIdentity" class="identity-group">
-    <block wx:for="{{identities}}" wx:key="item">
-      <label class="identity-label">
-        <radio value="{{item}}" checked="{{item === identity}}"></radio>
-        <text>{{item}}</text>
-        <text class="checkmark" wx:if="{{item === identity}}">✔️</text>
-      </label>
-    </block>
-  </radio-group>
+  <!-- 身份选择区域 -->
+  <view class="identity-section">
+    <radio-group bindchange="selectIdentity" class="identity-group">
+      <block wx:for="{{identities}}" wx:key="item">
+        <label class="identity-label">
+          <radio value="{{item}}" checked="{{item === identity}}"></radio>
+          <text>{{item}}</text>
+          <text class="checkmark" wx:if="{{item === identity}}">✔️</text>
+        </label>
+      </block>
+    </radio-group>
+  </view>
 
-  <input placeholder="昵称" bindinput="onNicknameInput" class="nickname-input"/>
-  <input placeholder="简介" bindinput="onBioInput" class="bio-input"/>
+  <!-- 输入框区域 -->
+  <view class="input-section">
+    <!-- 昵称输入框 -->
+    <input style="width: 662rpx; height: 69rpx; display: block; box-sizing: border-box; position: relative; left: 11rpx; top: 0rpx" placeholder="昵称" bindinput="onNicknameInput" class="nickname-input"/>
+    <!-- 学校、专业、简介卡片部分 -->
+    <view class="info-cards-section">
+      <view class="card">
+        <text>学校：</text>
+        <input placeholder="请输入学校" bindinput="onSchoolInput" class="school-input"/>
+      </view>
+      <view class="card">
+        <text>专业：</text>
+        <input placeholder="请输入专业" bindinput="onMajorInput" class="major-input"/>
+      </view>
+      <view class="card" style="height: 100px;">
+        <text>简介：</text>
+        <textarea placeholder="请输入简介" bindinput="onBioTextareaInput" class="bio-textarea" style="height: 130rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx"></textarea>
+      </view>
+    </view>
+  </view>
 
+  <view class="button-modal-section">
+  <!-- 保存按钮 -->
   <button bindtap="saveUserInfo" class="save-button">保存用户信息</button>
-
-  <modal wx:if="{{showModal}}" class="modal">
-    <view class="modal-content">
+  <view class="confirm-container" wx:if="{{showModal}}">
+    <view style="background-color: white; padding: 20px; border-radius: 10px">
       <text>您确定要保存修改后的信息吗？</text>
       <button bindtap="confirmSave" class="confirm-btn">确定</button>
       <button bindtap="cancelSave" class="cancel-btn">取消</button>
     </view>
-  </modal>
+  </view>
+</view>
 
-  <view class="status {{saveStatus ? (saveStatus.indexOf('成功') !== -1 ? 'success' : 'error') : ''}}">
-    {{saveStatus}}
+  <!-- 状态显示区域 -->
+  <view class="status-section">
+    <view class="status {{saveStatus? (saveStatus.indexOf('成功')!== -1?'success': 'error') : ''}}">
+      {{saveStatus}}
+    </view>
   </view>
 </view>

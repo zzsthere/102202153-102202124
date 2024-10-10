@@ -1,0 +1,75 @@
+.container {
+  padding: 20px;
+}
+
+.form-item {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.info-icon {
+  color: blue;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+input,
+textarea {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.count {
+  font-size: 12px;
+  color: #888;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.picker {
+  display: flex;
+  align-items: center;
+}
+
+.publish-btn {
+  background-color: #5f6974;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.confirm-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.confirm-btn,
+.cancel-btn {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.confirm-btn {
+  background-color: #5f6974;
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #5f6974;
+  color: white;
+}

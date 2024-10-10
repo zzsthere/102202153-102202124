@@ -1,0 +1,13 @@
+<view class=" notification -preference -container">
+  <view class=" notification -type -list">
+    <block wx:for="{{['项目更新通知', '成员加入通知', '聊天消息通知']}}" wx:key="index">
+      <checkbox-group name="notification -preferences">
+        <label>
+          <checkbox value="{{item}}" data-name="{{item}}" bindchange="handleNotificationPreferenceChange"/>{{item}}
+          <view class=" description">{{getDescription(item)}}</view>
+        </label>
+      </checkbox-group>
+    </block>
+  </view>
+  <button class=" save -button" bindtap="handleSaveNotificationPreferences">保存设置</button>
+</view>

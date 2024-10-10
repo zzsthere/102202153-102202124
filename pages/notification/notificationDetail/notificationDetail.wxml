@@ -1,0 +1,13 @@
+<view class=" notification -detail -container">
+  <view class=" notification -detail -card">
+    <view class=" notification -detail -title">{{notification.title }}</view>
+    <view class=" notification -detail -content">{{ notification.content }}</view>
+    <view class=" notification -detail -time">{{ notification.time }}</view>
+    <view class=" notification -detail -buttons">
+      <button class="mark-as-read-button" bindtap="handleMarkAsRead" style="background-color: blue;color: #fff;">标记为已读</button>
+      <button class="back-button" bindtap="handleBack" style="background-color: gray;color: #fff;">返回</button>
+      <!-- 如果是项目相关通知，显示查看相关项目按钮 -->
+      <button wx:if="{{ notification.relatedProjectId }}" bindtap="handleViewRelatedProject" style="background-color: orange;color: #fff;">查看相关项目</button>
+    </view>
+  </view>
+</view>

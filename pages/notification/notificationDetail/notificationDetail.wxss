@@ -1,0 +1,38 @@
+.notification-detail-container {
+  padding: 20px;
+}
+
+.notification-detail-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.notification-detail-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.notification-detail-content {
+  margin-top: 10px;
+  color: #666;
+}
+
+.notification-detail-time {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #999;
+}
+
+.notification-detail-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+button {
+  padding: 8px 15px;
+  border-radius: 5px;
+  margin-left: 10px;
+}

@@ -1,19 +1,58 @@
-{  
-  "pages": [  
-    "pages/index/index",  
-    "pages/logs/logs",  
-    "pages/login/login",  
-    "pages/register/register",  
-    "pages/userInfo/userInfo",  
-    "pages/projectDetail/projectDetail",  
-    "pages/chat/chat",  
-    "pages/notification/notification"  
-  ],  
-  "window": {  
-    "navigationBarBackgroundColor": "#4285F4",  
-    "navigationBarTextStyle": "white",  
-    "navigationBarTitleText": "AL聚能阁",  
-    "backgroundColor": "#F5F5F5",  
-    "backgroundTextStyle": "light"  
-  }  
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/register/register",
+    "pages/userInfo/userInfo",
+    "pages/projectList/projectList",
+    "pages/projectDetail/projectDetail",
+    "pages/chat/chat",
+    "pages/notification/notification",
+    "pages/notification/notificationDetail/notificationDetail",
+    "pages/notification/notificationPreference/notificationPreference"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "AL聚能阁",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/shouye.png",
+        "selectedIconPath": "images/shouye.png"
+      },
+      {
+        "pagePath": "pages/projectList/projectList",
+        "text": "发布",
+        "iconPath": "images/xiangmu.png",
+        "selectedIconPath": "images/xiangmu.png"
+      },
+      {
+        "pagePath": "pages/chat/chat",
+        "text": "消息",
+        "iconPath": "images/xiaoxi.png",
+        "selectedIconPath": "images/xiaoxi.png"
+      },
+      {
+        "pagePath": "pages/notification/notification",
+        "text": "通知",
+        "iconPath": "images/tongzhi.png",
+        "selectedIconPath": "images/tongzhi.png"
+      },
+      {
+        "pagePath": "pages/userInfo/userInfo",
+        "text": "我的",
+        "iconPath": "images/wode.png",
+        "selectedIconPath": "images/wode.png"
+      }
+    ],
+    "color": "#888888",
+    "selectedColor": "#ff0000",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black" 
+  }
 }

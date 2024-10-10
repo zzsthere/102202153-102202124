@@ -1,2 +1,25 @@
-<!--pages/notification/notification.wxml-->
-<text>pages/notification/notification.wxml</text>
+<view class="notification-container">
+  <!-- 未读通知提示框 -->
+  <modal wx:if="{{showUnreadNotificationPopup}}" title="未读通知" confirm-text="确定" bindconfirm="handleUnreadNotificationPopupConfirm">
+    您有{{unreadCount}}条未读通知，包括项目审核结果和新成员加入通知等。
+  </modal>
+
+  <!-- 通知列表 -->
+  <view class="notification-list">
+    <block wx:for="{{notificationList}}" wx:key="id">
+      <view class="notification-item" bindtap="handleNotificationTap" data-id="{{item.id}}">
+        <view class="notification-icon" wx:if="{{item.icon === 'folder'}}">📁</view>
+        <view class="notification-icon" wx:if="{{item.icon === 'magnifier'}}">🔍</view>
+        <view class="notification-icon" wx:if="{{item.icon === 'person'}}">👤</view>
+        <view class="notification-title">{{item.title}}</view>
+        <view class="notification-content">{{item.content}}</view>
+        <view class="notification-time" style="color: blue">{{item.time}}</view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 底部导航或其他页面元素（如果有） -->
+  <view class="bottom-navigation">
+    <button bindtap="onShowNotificationPreferencePage">设置</button>
+  </view>
+</view>

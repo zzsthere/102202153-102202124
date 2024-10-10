@@ -1,2 +1,13 @@
-<!--pages/projectDetail/projectDetail.wxml-->
-<text>pages/projectDetail/projectDetail.wxml</text>
+<view class="container">
+  <view class="project-details">
+    <text class="project-title">{{project.title}}</text>
+    <text class="project-description" style="height: 91rpx; display: block; position: relative; left: 0rpx; top: 67rpx; box-sizing: border-box">项目描述：{{project.description}}</text>
+    <text class="project-participants" style="height: 67rpx; display: block; box-sizing: border-box; position: relative; left: 0rpx; top: 67rpx">参与人数: {{project.participants}} / {{project.total}}</text>
+    <text class="project-views" style="height: 67rpx; display: block; box-sizing: border-box; position: relative; left: 0rpx; top: 67rpx">浏览人数: {{project.views}}</text>
+    <text class="project-deadline" style="height: 67rpx; display: block; box-sizing: border-box; position: relative; left: 0rpx; top: 67rpx">截止时间: {{project.deadline}}</text>
+    <text class="project-status" style="height: 67rpx; display: block; box-sizing: border-box; position: relative; left: 0rpx; top: 67rpx">当前状态: {{project.status}}</text>
+  </view>
+  <button bindtap="goBack" style="position: relative; left: 0rpx; top: 102rpx">返回</button>
+  <button bindtap="joinProject" style="position: relative; left: 0rpx; top: 116rpx">参加</button>
+  <button wx:if="{{!project &&!loading}}" bindtap="retryLoadProject">重试</button>
+</view>

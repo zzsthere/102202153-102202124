@@ -1,2 +1,37 @@
-<!--pages/chat/chat.wxml-->
-<text>pages/chat/chat.wxml</text>
+<view class="container">
+  <scroll-view class="chat-window" scroll-y="true" enable-back-to-top="true" bindscrolltolower="loadMoreMessages">
+    <block wx:for="{{messages}}" wx:key="index">
+     <view class="message-wrapper" style="{{item.wrapperStyle}}">
+       <view class="{{item.isSender? 'sender-message' : 'receiver-message'}} {{item.isAutoReply? 'auto-reply' : ''}}">
+         <image class="avatar" src="{{item.avatar}}" wx:if="{{item.avatar}}"></image>
+         <view class="message-content">
+           <text class="message-text">{{item.content}}</text>
+           <text class="message-time">{{formatTimestamp(item.timestamp)}}</text>
+         </view>
+         <block wx:if="{{item.type === 'image'}}">
+           <image class="thumbnail" src="{{item.url}}" bindtap="viewImage" data-url="{{item.url}}"></image>
+         </block>
+         <block wx:if="{{item.type === 'video'}}">
+           <image class="thumbnail" src="{{item.thumbnail}}" bindtap="playVideo" data-url="{{item.url}}">
+             <image class="play-icon" src="/assets/play.png"></image>
+           </image>
+         </block>
+       </view>
+     </view>
+   </block>
+  </scroll-view>
+
+  <view class="input-container">
+    <button class="emoji-button" bindtap="openEmojiPanel">😊</button>
+    <input class="input-box" placeholder="输入消息..." bindinput="onInput" value="{{inputValue}}" confirm-type="send" bindconfirm="sendMessage" />
+    <button class="send-button" bindtap="sendMessage">发送</button>
+  </view>
+
+  <view class="emoji-panel" wx:if="{{showEmojiPanel}}">
+    <view class="emoji-grid">
+      <block wx:for="{{emojis}}" wx:key="index">
+        <button class="emoji-item" bindtap="insertEmoji" data-emoji="{{item}}">{{item}}</button>
+      </block>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,10 @@
+{
+  "pages": [
+    "pages/notification/notification",
+    "pages/notification/notificationDetail/notificationDetail",
+    "pages/notification/notificationPreference/notificationPreference"
+  ],
+  "window": {
+    "navigationBarTitleText": "通知"
+  }
+}
